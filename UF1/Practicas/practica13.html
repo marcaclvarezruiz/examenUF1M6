@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Práctica 13</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>      
+            function inici(){             
+            	document.getElementById("button").addEventListener("click",canviarText);
+
+                function canviarText() {
+                	var texto=document.getElementById("texto").value;
+                	document.getElementById('negreta').innerHTML = texto;
+                	
+                }
+            }
+            window.onload=inici;
+        </script>
+    </head>
+    <body>
+        <h1>Canvi de text amb innerHTML</h1>
+        <p> Benvingut a la nostra web <strong id = 'negreta'>nom</strong> </p>
+        <input type="text" id="texto">
+        <input id='button' type = 'button' value = 'Canvia text' />
+        
+    </body>
+</html>

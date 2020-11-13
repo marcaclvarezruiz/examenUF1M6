@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Practica 9</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function inici() {
+			var div=document.getElementById("resultado");
+
+			document.getElementById("ej1").addEventListener("click", ej1);
+			document.getElementById("ej2").addEventListener("click", ej2);
+			document.getElementById("ej3").addEventListener("click", ej3);
+			document.getElementById("ej4").addEventListener("click", ej4);
+			document.getElementById("ej5").addEventListener("click", ej5);
+			document.getElementById("ej6").addEventListener("click", ej6);
+			document.getElementById("ej7").addEventListener("click", ej7);
+			document.getElementById("ej8").addEventListener("click", ej8);
+
+			function ej1() {
+				//Exercici 1
+				var x=1;
+				var inicial=11;
+				
+				while(x<=25) {
+					div.innerHTML= div.innerHTML + inicial + "-";
+					inicial=inicial+11;
+					x++;
+
+				}
+			}
+			function ej2() {
+				//Exercici 2
+				var contador=1;
+
+				while(contador<=500) {
+					if (contador%8==0) {
+						div.innerHTML= div.innerHTML + contador+"-";
+					}
+					contador++;
+				}
+			}
+			function ej3() {
+				//Exercici 3
+				var x=1;
+				var array=[];
+
+				while(x<=10) {
+					var nota=parseInt(prompt("Escribe la nota número"+x));
+					array.push(nota)
+					x++;
+				}
+
+				var majors_iguals7=0;
+				var menos7=0;
+
+
+				for(i=0;i<array.length;i++) {
+					if (array[i]>=7) {
+						majors_iguals7++;
+					} else if(array[i]<7) {
+						menos7++;
+					}
+				}
+
+				div.innerHTML="Majors o iguals a 7: "+majors_iguals7+"<br>Menos que 7: "+menos7;
+				
+			}
+
+			function ej4() {
+				//Exercici 4
+				var x=1;
+				var array=[];
+				var suma=0;
+
+				while(x<=5) {
+					var altura=parseFloat(prompt("Escribe la altura número"+x));
+					suma=suma+altura
+					x++;
+				}
+
+				var mitjana=suma/5;
+
+				div.innerHTML="La altura mitjana és: "+mitjana.toFixed(2);
+			}
+
+			function ej5() {
+				//Exercici 5
+				var x=1;
+				var media1=0;
+				var media2=0;
+				var gastos=0;
+
+				while(x<=5) {
+					var sueldo=parseFloat(prompt("Introduce salario número "+x));
+					if (sueldo>=1000 && sueldo<=3000) {
+						media1++;
+					} else if(sueldo>3000) {
+						media2++;
+					}
+					gastos=gastos+sueldo;
+					x++;
+				}
+
+				div.innerHTML="La empresa se gasta: "+gastos+" en sueldos<br>"+media1+" cobran entre 1000 y 3000$<br>"+media2+" cobran más de 3000$";
+				
+			}
+			function ej6() {
+				//Exercici 6
+				var x=1;
+				var inicial=5;
+				
+				while(x<=20) {
+					div.innerHTML= div.innerHTML + inicial + "-";
+					inicial=inicial+5;
+					x++;
+
+				}
+			}
+			function ej7() {
+				//Exercici 7
+				var contador=1;
+
+				while(contador<=1500) {
+					if (contador%10==0) {
+						div.innerHTML= div.innerHTML + contador + "-";
+					}
+					contador++;
+				}
+				
+			}
+			function ej8() {
+				//Exercici 8
+				var x=1;
+				var array=[];
+				var contador_pares=0;
+				var contador_impares=0;
+
+				while(x<=5) {
+					var num=parseInt(prompt("Escrcibe un número"));
+					if (num%2==0) {
+						contador_pares++
+					} else if(num%2!=0) {
+						contador_impares++
+					}
+					x++;
+				}
+
+				div.innerHTML="Pares: "+contador_pares+"<br>Impares: "+contador_impares;
+			}
+
+		}
+		window.onload=inici;
+	</script>
+</head>
+<body>
+	<h1> Practica 9 </h1>
+	<button type="button" id="ej1"> Ejercicio 1</button>
+	<button type="button" id="ej2"> Ejercicio 2</button>
+	<button type="button" id="ej3"> Ejercicio 3</button>
+	<button type="button" id="ej4"> Ejercicio 4</button>
+	<button type="button" id="ej5"> Ejercicio 5</button>
+	<button type="button" id="ej6"> Ejercicio 6</button>
+	<button type="button" id="ej7"> Ejercicio 7</button>
+	<button type="button" id="ej8"> Ejercicio 8</button>
+
+	<div id="resultado">
+		
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function inici(){
+			var div=document.getElementById("resultado");
+
+			document.getElementById("ej1").addEventListener("click", ej1);
+			document.getElementById("ej2").addEventListener("click", ej2);
+			document.getElementById("ej3").addEventListener("click", ej3);
+			document.getElementById("ej4").addEventListener("click", ej4);
+			document.getElementById("ej5").addEventListener("click", ej5);
+			document.getElementById("ej6").addEventListener("click", ej6);
+			document.getElementById("ej7").addEventListener("click", ej7);
+			document.getElementById("ej8").addEventListener("click", ej8);
+			document.getElementById("ej9").addEventListener("click", ej9);
+
+			function ej1() {
+				//Exercici 1
+				var suma=0;
+
+				do{
+					var num=parseInt(prompt("Escribe un valor"));
+					if (num==9999) {
+						alert("Detenemos el programa");
+					} else if (num!=9999) {
+						suma=suma+num;
+					}
+					
+				} while(num!=9999);
+
+				if (suma==0) {
+					div.innerHTML=suma+" es 0.";
+				} else if(suma>0) {
+					div.innerHTML=suma+" es mas grande que 0.";
+				} else if(suma<0) {
+					div.innerHTML=suma+" es mas pequeño que 0";
+				}
+			}
+
+			function ej2() {
+				//Exercici 2
+				var suma_saldos=0;
+
+				do {
+					var num_compte=parseInt(prompt("Escribe número de cuenta"));
+					if (num_compte<0) {
+						alert("Detenemos el programa");
+					} else if(num_compte>=0) {
+						var nom=prompt("Escribe un nombre");
+						var saldo=parseInt(prompt("Escribe saldo actual"));
+
+						if (saldo>0) {
+							div.innerHTML=div.innerHTML+"Número de compte: "+num_compte+"<br>Nom client: "+nom+"<br>Estat del compte: Creditor<br>";
+							suma_saldos=suma_saldos+saldo;
+						} else if(saldo<0) {
+							div.innerHTML=div.innerHTML+"Número de compte: "+num_compte+"<br>Nom client: "+nom+"<br>Estat del compte: Deutor<br>";
+						} else if(saldo==0) {
+							div.innerHTML=div.innerHTML+"Número de compte: "+num_compte+"<br>Nom client: "+nom+"<br>Estat del compte: Nul<br>";
+						}
+					}
+				} while(num_compte>=0);
+
+				div.innerHTML=div.innerHTML+"Suma de todos los saldos creditors: "+suma_saldos;
+			}
+
+			function ej3() {
+				//Exercici 3
+				var totalPersonas=0;
+				var homes=0;
+				var dones=0;
+				var hombres1665=0;
+
+				do{
+					var dni=prompt("Escribe un DNI");
+					if (dni==0) {
+						alert("Finalizamos programa");
+					} else if (dni!=0) {
+						var edat=parseInt(prompt("Escribe edad"));
+						if (edat>=16 && edat<=65) {
+							hombres1665++;
+						}
+						var sexe=prompt("Escribe masculino o femenino");
+						if (sexe=="masculino") {
+							homes++;
+						} else if(sexe=="femenino") {
+							dones++;
+						}
+						totalPersonas++;
+					}
+
+				} while(dni!=0);
+
+				div.innerHTML="Quantitat total de persones censades: "+totalPersonas+"<br>Quantitat d'homes: "+homes+"<br>Quantitat de dones: "+dones+"<br>Quantitat d'homes entre 16 i 65: "+hombres1665;
+			}
+
+			
+			function ej4() {
+				//Exercici 4
+				for(var i=0;i<=3;i++) {
+					mida=parseInt(prompt("Escribe la mida"));
+					altura=parseInt(prompt("Escriba la altura"));
+
+					div.innerHTML=div.innerHTML+"Base: "+mida+"<br>Altura: "+altura+"<br>Superficie: "+mida*(altura*0.5)+"<br>";
+				}
+
+			}
+
+			function ej5() {
+				//Exercici 5
+				var suma=0;
+
+				for(var i=1;i<10;i++) {
+					var num=parseInt(prompt("Escribe un número"));
+					if (i>=5) {
+						suma=suma+num;
+					}
+
+				}
+
+				div.innerHTML="Suma de los ultimos 5 numeros: "+suma;
+			}
+
+			function ej6() {
+				//Exercici 6
+				for (var i=1;i<=10;i++) {
+					div.innerHTML=div.innerHTML+5+" * "+i+" = "+5*i+"<br>";
+				}
+				
+			}
+
+			function ej7() {
+				//Exercici 7
+				var numero=parseInt(prompt("Escribe un número"));
+
+				for (var i=1;i<=12;i++) {
+					div.innerHTML=div.innerHTML+numero+" * "+i+" = "+numero*i+"<br>";
+				}
+				
+			}
+
+			function ej8() {
+				//Exercici 8
+				for(var i=0;i<=4;i++) {
+					var lado1=parseInt(prompt("Escribe el lado número"+i));
+					var lado2=parseInt(prompt("Escribe el lado número"+i));
+					var lado3=parseInt(prompt("Escribe el lado número"+i));
+
+					if (lado1==lado2 && lado2==lado3) {
+						alert("Es equilàter");
+					} else if (lado1!=lado2 && lado2!=lado3) {
+						alert("Es escalè")
+					} else if(lado1==lado2 || lado1==lado3 || lado2==lado1 || lado2==lado3 ||lado3==lado1 || lado3==lado2) {
+						alert("Es isòsceles");
+					}
+
+
+				}
+				
+			}
+
+			function ej9() {
+				//Exercici 9
+				var contador_negativos=0;
+				var contador_positivos=0;
+				var contador_multiples=0;
+				var suma_parells=0;
+
+				for (var i=0; i<6;i++) {
+					var numero=parseInt(prompt("Escribe un número"));
+					if (numero<0) {
+						contador_negativos++;
+					} else if(numero>0) {
+						contador_positivos++;
+					}
+
+					if (numero%15==0) {
+						contador_multiples++;
+					}
+
+					if (numero%2==0) {
+						suma_parells=suma_parells+numero;
+					}
+
+				}
+
+				div.innerHTML="Numeros negativos: "+contador_negativos+"<br>Numeros positivos: "+contador_positivos+"<br>Multiplos de 15: "+contador_multiples+"<br> Suma de los pares: "+suma_parells;
+			}
+
+		}
+
+		window.onload=inici;
+	</script>
+</head>
+<body>
+	<h1> Practica 10 </h1>
+	<button type="button" id="ej1"> Ejercicio 1</button>
+	<button type="button" id="ej2"> Ejercicio 2</button>
+	<button type="button" id="ej3"> Ejercicio 3</button>
+	<button type="button" id="ej4"> Ejercicio 4</button>
+	<button type="button" id="ej5"> Ejercicio 5</button>
+	<button type="button" id="ej6"> Ejercicio 6</button>
+	<button type="button" id="ej7"> Ejercicio 7</button>
+	<button type="button" id="ej8"> Ejercicio 8</button>
+	<button type="button" id="ej9"> Ejercicio 9</button>
+	<div id="resultado">
+		
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Práctica 18</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var arrayPrueba=["Coche","Moto","Furgoneta"];
+		var arrayPrueba2=["Avión","Barco","Submarino"];
+
+		var arrayTres=arrayPrueba.concat(arrayPrueba2);
+		console.log(arrayTres);
+
+		console.log(arrayPrueba.join("-"));
+
+		console.log(arrayPrueba.pop());
+
+		arrayPrueba.push("Tractor");
+		console.log(arrayPrueba);
+
+		console.log(arrayPrueba.reverse());
+
+		console.log(arrayPrueba.shift());
+
+		console.log(arrayPrueba.slice(0,2));
+
+		console.log(arrayPrueba.sort());
+		/*
+		Si en el segundo parametro ponemos 1 significa que queremos substituirlo
+		Si ponemos 0 significa que queremos añadirlo sin elimnar el que ya esta ahí
+		*/
+
+		arrayPrueba.splice(0,0,"Tanque");
+		console.log(arrayPrueba);
+		
+		var arrayString = arrayPrueba.toString();
+		console.log(arrayString);
+		
+		//Devuelve la longitud del array y añade el valor del parametro al principio
+		console.log(arrayPrueba.unshift("Todoterreno"));
+
+
+	</script>
+</head>
+<body>
+	<h1> Práctica 18 </h1>
+	<p> ¡Consultar consola para ver resultados! </p>
+</body>
+</html>

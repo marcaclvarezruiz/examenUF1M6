@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Practica 3</title>
+	<meta charset="utf-8">
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function inici() {
+			var div=document.getElementById("resultado");
+
+			var bot1 = document.getElementById("ej1");
+			var bot2 = document.getElementById("ej2");
+
+			bot1.addEventListener("click", ej1);
+			bot2.addEventListener("click", ej2);
+
+			function ej1() {
+				//Exercici 1
+				var nom="Marc";
+				var sou="1500";
+
+				div.innerHTML="Nombre del trabajador: "+nom+"<br> Sueldo: "+sou;
+				
+			}
+
+			function ej2() {
+				//Exercici 2
+				div.innerHTML="MESES DEL AÑO IMPARES<br>";
+
+				var meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+				var controlarPar=1;
+				for(i=0; i<meses.length; i++) {
+					if (controlarPar%2!=0) {	
+						div.innerHTML = div.innerHTML + meses[i]+"<br>";
+						
+					}
+					controlarPar++;
+				};
+			}		
+		}
+		window.onload=inici;
+	</script>
+</head>
+<body>
+	<h1> Practica 3 </h1>
+	<button type="button" id="ej1"> Ejercicio 1</button>
+	<button type="button" id="ej2"> Ejercicio 2</button>
+	<div id="resultado">
+		
+	</div>
+
+</body>
+</html>

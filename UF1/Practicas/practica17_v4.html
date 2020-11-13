@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Práctica 17_v2_4</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function inici() {
+			document.getElementById("boton1").addEventListener("click",cambiarColor);
+			
+			function cambiarColor() {
+				if (navigator.userAgent.indexOf("Firefox") !== -1) {
+					document.body.style.backgroundColor="green";
+				} else {
+					document.body.style.backgroundColor="red";
+				}
+
+			}
+		}
+		window.onload=inici;	
+	</script>
+</head>
+<body>
+	<h1> Práctica 17_v2_4 </h1>
+	<button id="boton1"> Cambiar color de fondo </button>
+</body>
+</html>

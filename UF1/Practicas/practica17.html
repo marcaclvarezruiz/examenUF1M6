@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Práctica 17</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function inici() {
+			document.getElementById("boton1").addEventListener("click",funcion1);
+
+			function funcion1() {
+				var ventana=open("","","width=500px,height=500px,toolbar=yes,menubar=yes");
+
+				ventana.document.write("<h1> Ventana emergente </h1>");
+				ventana.document.write("<button id='boton2'> Cerrar ventana </button>");
+
+				var botonVentana=ventana.document.getElementById("boton2");
+				botonVentana.addEventListener("click",function cerrarVentana() {
+					ventana.close();
+				});	
+			}
+
+			
+		}
+		window.onload=inici;
+
+		function funcion2() {
+				var numeroRandom=Math.floor(Math.random() * (3 - 0)) ;
+				if(numeroRandom==0) {
+					window.location="https://outlook.live.com/owa/";
+				} else if(numeroRandom==1) {
+					window.location="https://www.google.com/intl/es/gmail/about/";
+				} else if(numeroRandom==2) {
+					window.location="https://es.yahoo.com/?p=us"
+				}
+			}
+	</script>
+</head>
+<body>
+	<h1> Práctica 17 </h1>
+	<button id="boton1"> Abrir ventana </button>
+	<a href="javascript:funcion2()"> Ventana random </a>
+</body>
+</html>

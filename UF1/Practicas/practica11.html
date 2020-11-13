@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Práctica 11</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function inici() {
+			var div=document.getElementById("resultado");
+
+			var boton7=document.getElementById("boton7").addEventListener("click",funcion7);
+
+			function funcion1(a, b, c) {
+				//Exercici 1
+				if (a<b && a<c) {
+					div.innerHTML= div.innerHTML + a + "<br>";
+				} else if(b<a && b<c) {
+					div.innerHTML= div.innerHTML + b + "<br>";
+				} else if(c<a && c<b) {
+					div.innerHTML= div.innerHTML + c + "<br>";
+				}
+			}
+
+			function funcion2(a, b, c) {
+				//Exercici 2
+				var array=[a,b,c];
+				array.sort(function(a, b){return a - b}); 
+				div.innerHTML= div.innerHTML + array + "<br>";		
+			}
+
+			function funcion3(a, b, c) {
+				//Exercici 3
+				if (a>b && a>c) {
+					return a;
+
+				} else if(b>a && b>c) {
+					return b;
+
+				} else if(c>a && c>b) {
+					return c;
+				}
+			}
+
+			function funcion4(a) {
+				//Exercici 4
+				var perimetro=a*4;
+				return perimetro;
+			}
+
+			function funcion5(a) {
+				//Exercici 5
+				var conversion=parseInt(a);
+				var contadorDigitos=conversion.toString().length;
+
+				return contadorDigitos;
+
+			}
+
+			function funcion6(a, b, c) {
+				//Exercici 6
+				var mediana = (a+b+c)/3;
+				return mediana;
+			}
+
+			function funcion7() {
+				//Exercici 7
+				var numero1=parseFloat(prompt("Escribe un número"));
+				var numero2=parseFloat(prompt("Escribe un número"));
+				var numero3=parseFloat(prompt("Escribe un número"));
+				var numero4=parseFloat(prompt("Escribe un número"));
+				var numero5=parseFloat(prompt("Escribe un número"));
+
+				var suma=numero1+numero2+numero3+numero4+numero5;
+				return suma;
+
+			}
+
+			funcion1(3,5,10);
+			funcion2(8,25,3);
+			var numeroGrande = funcion3(20,25,14);
+			div.innerHTML= div.innerHTML + numeroGrande+ "<br>";
+			var perimetro=funcion4(4);
+			div.innerHTML= div.innerHTML + perimetro + "<br>";
+			var contadorDigitos=funcion5(230);
+			div.innerHTML= div.innerHTML + contadorDigitos + "<br>";
+			var mediana=funcion6(7,5,6);
+			div.innerHTML= div.innerHTML + mediana + "<br>";
+			var suma=funcion7();
+			div.innerHTML= div.innerHTML + suma + "<br>";
+
+		}
+		window.onload=inici;
+	</script>
+</head>
+<body>
+	<h1> Práctica 11 </h1>
+	<p> ¡Las funciones se ejecutan automaticamente!</p>
+	<button id="boton7"> Ejercicio 7</button>
+	<div id="resultado">
+		
+	</div>
+
+</body>
+</html>

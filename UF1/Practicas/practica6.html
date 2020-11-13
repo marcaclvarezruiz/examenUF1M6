@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Practica 6</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function inici() {
+			var div=document.getElementById("resultado");
+
+			document.getElementById("ej1").addEventListener("click", ej1);
+			document.getElementById("ej2").addEventListener("click", ej2);
+			document.getElementById("ej3").addEventListener("click", ej3);
+			document.getElementById("ej4").addEventListener("click", ej4);
+			document.getElementById("ej5").addEventListener("click", ej5);
+			document.getElementById("ej6").addEventListener("click", ej6);
+			document.getElementById("ej7").addEventListener("click", ej7);
+			document.getElementById("ej8").addEventListener("click", ej8);
+			document.getElementById("ej9").addEventListener("click", ej9);
+
+			function ej1() {
+				//Exercici 1
+				var nota1=parseInt(prompt("Nota alumno 1"));
+				var nota2=parseInt(prompt("Nota alumno 2"));
+				var nota3=parseInt(prompt("Nota alumno 3"));
+
+				var notaMedia=(nota3+nota2+nota1)/3;
+
+				if (notaMedia>=7) {
+					div.innerHTML="Promocionat";
+				}
+			}
+
+			function ej2() {
+				//Exercici 2
+				var clave1=prompt("Escriba la clave");
+				var clave2=prompt("Escriba la clave");
+
+				if (clave1===clave2) {
+					div.innerHTML="Son iguales";
+				}
+			}
+
+			function ej3() {
+				//Exercici 3
+				var numero1=parseInt(prompt("Introduce un numero"));
+				var numero2=parseInt(prompt("Introduce un numero"));
+
+				if (numero1>numero2) {
+					var diferencia=numero1-numero2;
+					var suma=numero1+numero2;
+					div.innerHTML="Hay una dierencia de: "+diferencia+"<br> La suma es de: "+suma;
+				}  else {
+					var prodcuto=numero1%numero2;
+					var division=numero1/numero2;
+					div.innerHTML="Prodcuto: "+prodcuto+"<br>"+"División: "+division;
+					
+				}
+			}
+
+			function ej4() {
+				//Exercici 4
+				var nota1=parseInt(prompt("Introduce nota 1"));
+				var nota2=parseInt(prompt("Introduce nota 2"));
+				var nota3=parseInt(prompt("Introduce nota 3"));
+
+				var mediana=(nota1+nota2+nota3)/3;
+
+				if (mediana>=5) {
+					div.innerHTML="Aprovat";
+				} else {
+					div.innerHTML="Suspes";
+				}
+			}
+
+			function ej5() {
+				//Exercici 5
+				var numero=parseInt(prompt("Introduce un numero"));
+
+				if (numero>=10) {
+					div.innerHTML="Tiene dos digitos";
+				} else if(numero<=9) {
+					div.innerHTML="Tiene un solo digito";
+				}
+			}
+
+			function ej6() {
+				//Exercici 6
+				var valor1=parseInt(prompt("Introduce un número"));
+				var valor2=parseInt(prompt("Introduce un número"));
+				var valor3=parseInt(prompt("Introduce un número"));
+
+				if (valor1>=valor2 && valor1>=valor3) {
+					div.innerHTML=valor1;
+				} else if (valor2>=valor1 && valor2>=valor3) {
+					div.innerHTML=valor2;
+				} else if(valor3>= valor1 && valor3>=valor2) {
+					div.innerHTML=valor3;
+				}
+			}
+
+			function ej7() {
+				//Exercici 7
+				var sencer=parseInt(prompt("Escribe un número: "));
+
+				if (sencer==0) {
+					div.innerHTML="Es cero";
+				} else if(sencer<0) {
+					div.innerHTML="Es negativo"
+				} else if(sencer>0) {
+					div.innerHTML="Es positivo";
+				}
+			}
+
+			function ej8() {
+				//Exercici 8
+				var numeroPositivo=parseInt(prompt("Esribe un número: "));
+
+				if (numeroPositivo>=1 && numeroPositivo<=999) {
+					if (numeroPositivo>=1 && numeroPositivo<=9) {
+						div.innerHTML="Tiene una cifra";
+					} else if(numeroPositivo>=10 && numeroPositivo<=99) {
+						ddiv.innerHTML="Tiene dos cifras";
+					} else if(numeroPositivo>=100 && numeroPositivo<=999) {
+						div.innerHTML="Tiene tres cifras";
+					}
+				} else {
+					div.innerHTML="No está en el rango e una, dos o tres cifras o no es positivo";
+				}
+			}
+
+			function ej9() {
+				//Exercici 9
+				var nom=prompt("Introduce nombre");
+				var preguntasRealizadas=parseInt(prompt("Número de preguntas realizadas"));
+				var preguntasCorrectas=parseFloat(prompt("Número de preguntas correctas"));
+
+				var porcentaje90=(90*preguntasRealizadas)/100;
+				var porcentaje75=(75*preguntasRealizadas)/100;
+				var porcentaje50=(50*preguntasRealizadas)/100;
+				
+				if (preguntasCorrectas>=porcentaje90) {
+					div.innerHTML="Nom: "+nom+" Nivell: superior";
+				} else if(preguntasCorrectas>= porcentaje75 && preguntasCorrectas<porcentaje90) {
+					div.innerHTML="Nom: "+nom+" Nivell: Nivell mitjà";
+				} else if(preguntasCorrectas>=porcentaje50 && preguntasCorrectas<porcentaje75) {
+					div.innerHTML="Nom: "+nom+" Nivell: Nivell regular";
+				} else if(preguntasCorrectas<porcentaje50) {
+					div.innerHTML="Nom: "+nom+" Nivell: Fora de nivell";
+				}
+				
+			}
+			
+		}
+		window.onload=inici;
+	</script>
+</head>
+<body>
+	<h1> Practica 6 </h1>
+	<button type="button" id="ej1"> Ejercicio 1</button>
+	<button type="button" id="ej2"> Ejercicio 2</button>
+	<button type="button" id="ej3"> Ejercicio 3</button>
+	<button type="button" id="ej4"> Ejercicio 4</button>
+	<button type="button" id="ej5"> Ejercicio 5</button>
+	<button type="button" id="ej6"> Ejercicio 6</button>
+	<button type="button" id="ej7"> Ejercicio 7</button>
+	<button type="button" id="ej8"> Ejercicio 8</button>
+	<button type="button" id="ej9"> Ejercicio 9</button>
+	<div id="resultado">
+		
+	</div>
+
+</body>
+</html>

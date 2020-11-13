@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Práctica 17_V3</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function inici() {
+			var ventana;
+
+			document.getElementById("boton1").addEventListener("click",crearVentana);
+			document.getElementById("boton2").addEventListener("click",cerrarVentana);
+			document.getElementById("boton3").addEventListener("click",redimensionarVentana);
+			document.getElementById("boton4").addEventListener("click",moverVentana);
+
+			function crearVentana() {
+				ventana=open("","","width=500px,height=500px");
+				ventana.focus();
+
+			}
+
+			function cerrarVentana() {
+				ventana.close();
+			}
+
+			function redimensionarVentana() {
+				ventana.resizeTo(screen.width-100,screen.height-100);
+				ventana.focus();
+			}
+
+			function moverVentana(){
+				ventana.moveTo(50,50);
+				ventana.focus();
+			}
+		}
+		window.onload=inici;
+	</script>
+</head>
+<body>
+	<h1> Práctica 17_V3 </h1>
+	<button id="boton1"> Abrir ventana </button>
+	<button id="boton2"> Cerrar ventana </button>
+	<button id="boton3"> Redimensionar ventana </button>
+	<button id="boton4"> Mover ventana </button>
+</body>
+</html>

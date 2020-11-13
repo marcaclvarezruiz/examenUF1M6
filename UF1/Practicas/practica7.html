@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Practica 7</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function inici() {
+			var div=document.getElementById("resultado");
+
+			document.getElementById("ej1").addEventListener("click", ej1);
+			document.getElementById("ej2").addEventListener("click", ej2);
+			document.getElementById("ej3").addEventListener("click", ej3);
+			document.getElementById("ej4").addEventListener("click", ej4);
+
+			function ej1() {
+				//Exercici 1
+				var num1=parseInt(prompt("Escribe un número: "));
+				var num2=parseInt(prompt("Escribe un número: "));
+				var num3=parseInt(prompt("Escribe un número: "));
+
+				if (num1==num2 && num2==num3) {
+					div.innerHTML=(num1+num2)*num3;
+				} else {
+					div.innerHTML="No son iguales!";
+				}
+			}
+
+			function ej2() {
+				//Exercici 2
+				var num1=parseInt(prompt("Escribe un número: "));
+				var num2=parseInt(prompt("Escribe un número: "));
+				var num3=parseInt(prompt("Escribe un número: "));
+
+				if (num1<10 && num2<10 && num3<10) {
+					div.innerHTML="Todos son menores de 10";
+				}
+			}
+
+			function ej3() {
+				//Exercici 3
+				var sueldo=parseFloat(prompt("Escribe un sueldo: "));
+				var antiguedad=parseInt(prompt("Escribe antigüedad trabajador: "));
+
+				if (sueldo<1000 && antiguedad>=10) {
+					sueldo_nuevo=sueldo+(sueldo*0.20);
+					div.innerHTML="Anterior sueldo: "+sueldo+"<br>Nuevo sueldo: "+sueldo_nuevo;
+				} else if(sueldo<1000 && antiguedad<10) {
+					sueldo_nuevo=sueldo+(sueldo*0.05);
+					div.innerHTML="Anterior sueldo: "+sueldo+"<br>Nuevo sueldo: "+sueldo_nuevo;
+				} else if(sueldo>=1000) {
+					div.innerHTML="Sueldo sin cambio "+sueldo;
+				}
+			}
+
+			function ej4() {
+				//Exercici 4
+				var menor=prompt("Eres menor de edad? ");
+				var uni=prompt("Eres estudiante universitario? ");
+
+				menor_minusucla=menor.toLowerCase();
+				uni_minusucla=uni.toLowerCase();
+
+
+				if (menor_minusucla=="si" || uni_minusucla=="si"){
+					div.innerHTML="Aplicar descuento";
+				} else {
+					div.innerHTML="No aplicar descuento";
+				}
+			}
+		}
+		window.onload=inici;
+	</script>
+</head>
+<body>
+	<h1> Practica 7 </h1>
+	<button type="button" id="ej1"> Ejercicio 1</button>
+	<button type="button" id="ej2"> Ejercicio 2</button>
+	<button type="button" id="ej3"> Ejercicio 3</button>
+	<button type="button" id="ej4"> Ejercicio 4</button>
+
+	<div id="resultado">
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Practica 5</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function inici() {
+			var div=document.getElementById("resultado");
+
+			document.getElementById("ej1").addEventListener("click", ej1);
+			document.getElementById("ej2").addEventListener("click", ej2);
+			document.getElementById("ej3").addEventListener("click", ej3);
+			document.getElementById("ej4").addEventListener("click", ej4);
+
+			function ej1() {
+				//Exercici 1
+				var costat=parseInt(prompt("Escribe el lado del triángulo"));
+				var perimetre=costat*4;
+
+				div.innerHTML="Perimetro del cuadrado: "+perimetre;
+			}
+
+			function ej2() {
+				//Exercici 2
+				var nom1=prompt("Escribe un número: ");
+				var nom2=prompt("Escribe un número: ");
+				var nom3=prompt("Escribe un número: ");
+				var nom4=prompt("Escribe un número: ");
+
+				var sumaPrimers=parseInt(nom1)+parseInt(nom2);
+				var producto=parseInt(nom3)%parseInt(nom4)
+
+				div.innerHTML="Suma primeras dos varaibles: "+sumaPrimers+"<br>"+"Producto ultimas varaibles: "+producto;
+			}
+
+			function ej3() {
+				//Exercici 3
+				var valor1=parseInt(prompt("Escribe un número: "));
+				var valor2=parseInt(prompt("Escribe un número: "));
+				var valor3=parseInt(prompt("Escribe un número: "));
+				var valor4=parseInt(prompt("Escribe un número: "));
+
+				var suma=valor1+valor2+valor3+valor4;
+
+				div.innerHTML="Suma valores: "+suma;
+			}
+
+			function ej4() {
+				//Exercici 4
+				var precio=parseInt(prompt("Precio del producto"));
+				var dinero=parseInt(prompt("Dinero disponible"));
+
+				var totalPagar=precio-dinero;
+
+				div.innerHTML="Tienes que pagar "+totalPagar+"€";
+			}		
+		}
+		window.onload=inici;
+		
+	</script>
+</head>
+<body>
+	<h1> Practica 5 </h1>
+	<button type="button" id="ej1"> Ejercicio 1</button>
+	<button type="button" id="ej2"> Ejercicio 2</button>
+	<button type="button" id="ej3"> Ejercicio 3</button>
+	<button type="button" id="ej4"> Ejercicio 4</button>
+
+	<div id="resultado">
+		
+	</div>
+</body>
+</html>

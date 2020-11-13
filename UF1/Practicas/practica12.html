@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Práctica 12</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+        	function inici() {
+
+                document.getElementById("ej1").addEventListener("click",ej1);
+                document.getElementById("ej2").addEventListener("click",ej2);
+                document.getElementById("ej3").addEventListener("click",ej3);
+
+                function ej1() {
+                    //Exercici 1
+                    var paragrafos=document.getElementsByTagName("p");
+                    paragrafos[1].style.color="red"
+                    paragrafos[3].style.color="red";
+                }
+
+                function ej2() {
+                    //Exercici 2
+                    var paragrafos2=document.getElementsByClassName("lletraGran");
+                    paragrafos2[0].style.fontSize="20";
+                    paragrafos2[1].style.fontSize="20";
+                }
+
+                function ej3() {
+                    //Exercici 3
+                    var paragrafo3=document.getElementById("cinque");
+
+                    paragrafo3.style.backgroundColor="green";
+                }        		
+        	}
+
+        	window.onload=inici;
+        </script>
+    </head>
+    <body>
+        <h1>Accés als elements de la pàgina</h1>
+        <p id="primer" class="lletraGran">primer paràgraf</p>
+        <p id="segon">segon paràgraf</p>
+        <p id="tercer" class="lletraGran">tercer paràgraf</p>
+        <p id="quart">quart paràgraf</p>
+        <p id="cinque">cinquè paràgraf</p>
+        <button id="ej1">Modificar color letra primer y seguna paragrafo </button>
+        <button id="ej2"> Modificar tamaño de la letra de la clase 'lletraGran'</button>
+        <button id="ej3"> Cambiar color de fondo del quito paragrafo</button>
+    </body>
+</html>

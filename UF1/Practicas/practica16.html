@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Práctica 16 </title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function inici() {
+			var fechaActual=new Date();
+
+			console.log(fechaActual.getDate());
+			console.log(fechaActual.getDay());
+			console.log(fechaActual.getHours());
+			console.log(fechaActual.getMinutes());
+			console.log(fechaActual.getMonth());
+			console.log(fechaActual.getSeconds());
+			console.log(fechaActual.getTime());
+			console.log(fechaActual.getFullYear());
+
+			console.log("Fecha actual del sistema: "+fechaActual);
+
+			fechaActual.setDate(15);
+			fechaActual.setHours(23);
+			fechaActual.setMinutes(45);
+			fechaActual.setMonth(9);
+			fechaActual.setSeconds(30);
+			/*
+			setTime actualiza la fecha completa, por eso comento esta linea 
+			fechaActual.setTime();
+			*/
+			fechaActual.setFullYear(2019);
+
+
+			console.log("Fecha modificada con sets: "+fechaActual);
+
+			/************************  Exercici 2  ************************/
+
+			var boton=document.getElementById("boton");
+
+			boton.addEventListener("click",funcion1);
+
+
+			function funcion1() {
+				var fechaUsuario=document.getElementById("input").value;
+
+				if (validaData(fechaUsuario)==false) {
+					alert("Está mal escrita.");
+				} else if(validaData(fechaUsuario)==true) {
+					alert("Está bien escrita");
+				}
+
+			}
+
+			function validaData(data){
+			    var arrayData = data.split('/');
+			    var dia = parseInt(arrayData[0]);
+			    var mes = parseInt(arrayData[1]);
+			    var any = parseInt(arrayData[2]);
+
+			    var objecteData = new Date(any, mes - 1, dia);   //El mes comença per 0 (Gener)
+
+
+			    if(objecteData.getFullYear() === any && objecteData.getMonth() === (mes -1) && objecteData.getDate() === dia){
+			       return true;
+			    }else{
+			       return false;
+			    }
+			}
+		}
+
+		window.onload=inici;
+	</script>
+</head>
+<body>
+	<h1> Práctica 16 </h1>
+	<p> Mirar consola para ver primer ejercicio </p>
+	<p> Escribe una fecha </p>
+	<input id="input" type="text" name="">
+	<button id="boton" type="button"> Ejecutar </button>
+
+
+</body>
+</html>

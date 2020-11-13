@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Practica 8</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function inici() {
+			var div=document.getElementById("resultado");
+
+			document.getElementById("boton").addEventListener("click",ej1);
+
+			function ej1() {
+				//Exercici 1
+				var palabra=prompt("Escriu 'casa' 'taula' 'gos' o 'gat'");
+
+				switch(palabra) {
+					case "casa":
+						div.innerHTML="House";
+						break;
+					case "taula":
+						div.innerHTML="Table";
+						break;
+					case "gos":
+						div.innerHTML="Dog";
+						break;
+					case "gat":
+						div.innerHTML="Cat";
+						break;
+					default:
+						div.innerHTML="No está bien escrita";
+				}
+			}	
+		}
+		window.onload=inici;
+	
+	</script>
+</head>
+<body>
+	<h1> Practica 8 </h1>
+	<button id="boton" type="button"> PULSAR </button>
+	<div id="resultado">
+		
+	</div>
+
+</body>
+</html>

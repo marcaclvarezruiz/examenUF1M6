@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Practica 1</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function inici() {
+			var div=document.getElementById("resultado");
+
+			document.getElementById("ej1").addEventListener("click", ej1);
+
+			function ej1() {
+				div.innerHTML="Marc Álvarez Ruiz <br> 20 años";
+			}
+		}
+		
+		window.onload=inici;
+	</script>
+<body>
+	<h1> Practica 1</h1>
+	<button type="button" id="ej1"> Pulsar </button>
+	<div id="resultado">
+		
+	</div>
+</body>
+</html>
